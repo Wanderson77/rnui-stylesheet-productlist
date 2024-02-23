@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { ScrollView, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import './src/config/ReactotronConfig';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import Header from './src/components/Header';
+import SubHeader from './src/components/SubHeader';
+import ProductList from './src/components/ProductList';
+import Tabs from './src/components/Tabs';
+
+const App = () => (
+  <View style={{ flex: 1, backgroundColor: '#F8F8FA' }}>
+    <Header />
+    <ScrollView>
+      <SubHeader />
+      <ProductList />
+    </ScrollView>
+    <Tabs />
+  </View>
+);
+
+export default console.tron.overlay(App);
